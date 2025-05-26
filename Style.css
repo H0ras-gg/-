@@ -4,5 +4,5 @@ legend{margin-left: 120px; border: 2px solid; border-radius: 20%; color: darkblu
 .text{color: darkblue; border: 2px solid;border-radius: 20px;}
 #pass{color: darkblue;border-radius: 20px; border: 2px solid;}
 #tel{color: darkblue; border: 2px solid;border-radius: 20px;;}
-.lab{font-style: italic;font-size: 24px; margin-left: 100px;font-family: inherit;font-weight: bold;font-style: italic;color: #000;border: 3px solid; color: whitesmoke;padding: 1px;}
+.lab{font-style: italic;font-size: 15px; margin-left: 100px;font-family: inherit;font-weight: bold;font-style: italic;color: #000;border: 3px solid; color: whitesmoke;padding: 1px;}
 fieldset{background-image: url(sam.png); background-size: cover;background-position: center;}
