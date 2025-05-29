@@ -48,8 +48,8 @@
       {
         name: "r",
         text: "كم عدد أركان الإيمان؟",
-        correct: "11",
-        correctText: "١١ ركناً"
+        correct: "6",
+        correctText: "٦ركن"
       },
       {
         name: "d",
@@ -171,7 +171,7 @@
         <h3>${q.text}</h3>
         <p>إجابتك: <span class="${isCorrect ? 'correct' : 'wrong'}">${userAnswerText}</span></p>
         <p>الإجابة الصحيحة: <strong>${q.correctText}</strong></p>
-      `;
+      `
 
       resultsDiv.appendChild(questionDiv);
     });
