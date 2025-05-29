@@ -1,38 +1,180 @@
 <!DOCTYPE html>
-<html lang="ar" >
-
+<html lang="ar" dir="rtl">
 <head>
- <meta charset="UTF-8">
- <title>نتيجة</title>
- <meta name="author" content="mahmoud-horas">
- <link rel="stylesheet" href="style3.css" type="text/css" media="all" />
+  <meta charset="UTF-8" />
+  <title>نتيجة الأسئلة</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      direction: rtl;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .question {
+      background-color: #333;
+      border: 2px solid #000;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+    }
+    .correct {
+      color: #4caf50;
+      font-weight: bold;
+    }
+    .wrong {
+      color: #f44336;
+      font-weight: bold;
+    }
+  </style>
 </head>
-
 <body>
- 
- <h1 align="center ">نتيجة </h1>
- <hr />
- <h4 align="center">عدد الآيات في القرآن</h4>
- <div class="m">✅(٦٢٣٦آيه)</div>
-<div>❌(٦٦٢٨آيه)</div>
-<div>❌(٦٣٦٠آيه)</div>
-<hr />
-<h4 align="center">عدد اركان الإيمان</h4>
-<div>❌(٥أركان)</div>
+  <h1>نتيجة الاختبار</h1>
+  <div id="results"></div>
 
-<div class="m">✅(٦أركان)</div>
-<div>❌(١١ركن)</div>
-<hr />
-<h4 align="center ">عمر الرسول ﷺ عند وفاته </h4>
-<div>❌(٦٥سنة)</div>
-<div>❌(٦٤سنة)</div>
-<div class="m">✅(٦٣سنة)</div>
-<hr />
-<h4 align="center ">عدد الأنبياء في القرآن</h4>
-<div>❌(٢٦نبي)</div>
-<div class="m">✅(٢٥نبي)</div>
-<div>❌(٣١نبي)</div>
+  <script>
+    // تعريف الأسئلة والإجابات الصحيحة بعد التعديل
+    const questions = [
+      {
+        name: "ayah",
+        text: "كم عدد آيات القرآن الكريم؟",
+        correct: "6236",
+        correctText: "٦٢٣٦ آية"
+      },
+      {
+        name: "r",
+        text: "كم عدد أركان الإيمان؟",
+        correct: "11",
+        correctText: "١١ ركناً"
+      },
+      {
+        name: "d",
+        text: "كم كان عمر محمد ﷺ عند وفاته؟",
+        correct: "63",
+        correctText: "٦٣ سنة"
+      },
+      {
+        name: "n",
+        text: "كم عدد الأنبياء في القرآن؟",
+        correct: "25",
+        correctText: "٢٥ نبي"
+      },
+      {
+        name: "q5",
+        text: "ما اسم أول مسجد بني في الإسلام؟",
+        correct: "قباء",
+        correctText: "مسجد قباء"
+      },
+      {
+        name: "q6",
+        text: "من هو أول نبي؟",
+        correct: "آدم",
+        correctText: "آدم"
+      },
+      {
+        name: "q7",
+        text: "ما هي أطول سورة في القرآن؟",
+        correct: "البقرة",
+        correctText: "البقرة"
+      },
+      {
+        name: "q8",
+        text: "من هو خاتم الأنبياء؟",
+        correct: "محمد",
+        correctText: "محمد ﷺ"
+      },
+      {
+        name: "q9",
+        text: "ما هو عدد سور القرآن الكريم؟",
+        correct: "114",
+        correctText: "١١٤ سورة"
+      },
+      {
+        name: "q10",
+        text: "كم عدد الخلفاء الراشدين؟",
+        correct: "4",
+        correctText: "٤ خلفاء"
+      },
+      {
+        name: "q11",
+        text: "ما اسم السورة التي لا تبدأ بالبسملة؟",
+        correct: "التوبة",
+        correctText: "سورة التوبة"
+      },
+      {
+        name: "q12",
+        text: "من هو النبي الذي ابتلعه الحوت؟",
+        correct: "يونس",
+        correctText: "يونس عليه السلام"
+      },
+      {
+        name: "q13",
+        text: "ما هو اسم والدة النبي محمد ﷺ؟",
+        correct: "آمنة",
+        correctText: "آمنة بنت وهب"
+      },
+      {
+        name: "q14",
+        text: "من هو أول من أسلم من الصبيان؟",
+        correct: "علي",
+        correctText: "علي بن أبي طالب"
+      },
+      {
+        name: "q15",
+        text: "ما هي أول سورة نزلت في القرآن؟",
+        correct: "العلق",
+        correctText: "سورة العلق"
+      },
+      {
+        name: "q16",
+        text: "ما هي أعظم آية في القرآن؟",
+        correct: "الكرسي",
+        correctText: "آية الكرسي"
+      },
+      {
+        name: "q17",
+        text: "من هو النبي الذي تكلم في المهد؟",
+        correct: "عيسى",
+        correctText: "عيسى عليه السلام"
+      },
+      {
+        name: "q18",
+        text: "ما هي السورة التي تعادل ثلث القرآن؟",
+        correct: "الإخلاص",
+        correctText: "سورة الإخلاص"
+      },
+      {
+        name: "q19",
+        text: "من هو النبي الذي بنى السفينة؟",
+        correct: "نوح",
+        correctText: "نوح عليه السلام"
+      },
+    ];
 
+    const params = new URLSearchParams(window.location.search);
+    const resultsDiv = document.getElementById('results');
+
+    questions.forEach(q => {
+      const userAnswer = params.get(q.name);
+      const isCorrect = userAnswer === q.correct;
+
+      const userAnswerText = userAnswer || "لم يتم الاختيار";
+
+      const questionDiv = document.createElement('div');
+      questionDiv.classList.add('question');
+
+      questionDiv.innerHTML = `
+        <h3>${q.text}</h3>
+        <p>إجابتك: <span class="${isCorrect ? 'correct' : 'wrong'}">${userAnswerText}</span></p>
+        <p>الإجابة الصحيحة: <strong>${q.correctText}</strong></p>
+      `;
+
+      resultsDiv.appendChild(questionDiv);
+    });
+  </script>
 </body>
-
 </html>
