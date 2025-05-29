@@ -1,7 +1,58 @@
-.c{text-align: center;border: 3px;padding: ;}
-fieldset{background: 
-url(Ro.jpg
-);color: whitesmoke;
- cover;}
- body{background: cadetblue;}
-.m{background: url(Re.jpg) ; text-align: center; color: whitesmoke; }
+body {
+  background: url('Re.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Reem Kufi', sans-serif;
+  margin: 0;
+  padding: 20px;
+  direction: rtl;
+  color: #fff;
+}
+
+/* تنسيق النموذج */
+form {
+  max-width: 600px;
+  margin: auto;
+  background-color: rgba(0, 0, 139, 0.4);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #000;
+}
+
+/* تنسيق العناوين */
+h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* الحقول */
+.m {
+  margin: 10px 0;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* تسميات الخيارات */
+label {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+/* زر الإرسال */
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: royalblue;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+  background-color: navy;
+}
