@@ -1,29 +1,23 @@
-.c{text-align: center;border: 3px;padding: ;}
-fieldset{background:
-
-url(Ro.jpg);
-color: whitesmoke;}
- body{background: cadetblue;}
-.m{background: url(Re.jpg) ; text-align: center; color: w; }body {
+body {
   font-family: 'Cairo', sans-serif;
-  background-color: #222222; /* خلفية داكنة جداً */
+  background-color: #222222;
   margin: 0;
   padding: 20px;
-  color: #ffffff; /* النص أبيض */
+  color: #ffffff;
   direction: rtl;
 }
 
 h2 {
   font-size: 24px;
-  color: #ffffff; /* العناوين أبيض */
+  color: #ffffff;
   margin-bottom: 15px;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
   text-align: center;
 }
 
 fieldset {
-  border: 2px solid #000000; /* بوردر أسود */
-  background-color: #333333; /* خلفية داكنة للعناصر */
+  border: 2px solid #000000;
+  background-color: #333333;
   padding: 20px;
   margin: 20px 0;
   border-radius: 12px;
@@ -32,24 +26,24 @@ fieldset {
 .m {
   margin: 12px 0;
   padding: 12px;
-  border: 2px solid #000000; /* بوردر أسود */
+  border: 2px solid #000000;
   border-radius: 8px;
-  background-color: #444444; /* خلفية داكنة للخيار */
-  color: #ffffff; /* نص أبيض */
+  background-color: #444444;
+  color: #ffffff;
   font-size: 18px;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .m:hover {
-  background-color: #555555; /* تغيير لون خلفية الخيار عند المرور */
+  background-color: #555555;
 }
 
 label {
   cursor: pointer;
-  color: #ffffff; /* نص أبيض */
-  font-weight: 700; /* Bold */
+  color: #ffffff;
+  font-weight: 700;
 }
 
 input[type="radio"] {
@@ -63,10 +57,10 @@ input[type="submit"] {
   margin: 40px auto 20px;
   padding: 14px 40px;
   font-size: 22px;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
   color: #ffffff;
-  background-color: #000000; /* خلفية زر سوداء */
-  border: 2px solid #ffffff; /* بوردر أبيض للزر */
+  background-color: #000000;
+  border: 2px solid #ffffff;
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
